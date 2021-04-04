@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum - Login</title>
+    <link href="http://localhost:2045/fontawesome.css" rel="stylesheet" type="text/css"/>
+    <link href="http://localhost:2000/login/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="root">
+        <div id="mainframe">
+            <div id="inputs">
+                <input type="text" id="username" placeholder="Username" autocomplete="off">
+                <input type="email" id="emailid" placeholder="Email" autocomplete="off">
+                <div>
+                    <input type="password" id="password" placeholder="Password">
+                    <i id="eye" class="fal fa-eye-slash" style="margin: auto 0 auto -30px;"></i>
+                </div>
+                <label class="btn" id="signin">Sign Up</label>
+            </div>
+            <label id="error"></label>
+            <div id="notices">
+                <label>Already a user? <span id="login-link">Login here</span></label>
+            </div>
+        </div>
+        <div id="mainframe2">
+            <div id="inputs2">
+                <input type="email" id="emailid2" placeholder="Email" autocomplete="off">
+                <div>
+                    <input type="password" id="password2" placeholder="Password">
+                    <i id="eye2" class="fal fa-eye-slash" style="margin: auto 0 auto -30px;"></i>
+                </div>
+                <label class="btn" id="signin2">Sign In</label>
+            </div>
+            <label id="error2"></label>
+            <div id="notices2">
+                <label>New user? <span id="signup-link">Sign Up</span> Now</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="http://localhost:2000/login/script.js"></script>

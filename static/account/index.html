@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum - My Questions</title>
+    <link href="http://localhost:2000/account/style.css" rel="stylesheet" type="text/css"/>
+    <link href="http://localhost:2045/fontawesome.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="root">
+    <div id="container-lvl1">
+        <div id="icon">
+        </div>
+        <div id="search-window">
+            <input type="text" id="search-input" placeholder="Search">
+        </div>
+        <div id="options">
+            <i class="fas fa-user option" style="border: thin solid #d1d1d0;padding: 5px 10px;border-radius: 5px"><label id="username"></label></i>
+        </div>
+    </div>
+    <div id="container-lvl2">
+        <div id="side-bar">
+            <label id="home" class="sidebar-obj"><i class="fal fa-home-alt" style="margin: 0 15px 0 10px"></i>Home</label>
+            <label id="questions" class="sidebar-obj"><i class="fal fa-question-square" style="margin: 0 15px 0 10px"></i>My Questions</label>
+            <label id="answered" class="sidebar-obj"><i class="fal fa-comment-check" style="margin: 0 10px"></i>Answered</label>
+            <label id="starred" class="sidebar-obj"><i class="fal fa-star"  style="margin: 0 10px"></i>Starred</label>
+            <label id="flagged" class="sidebar-obj"><i class="fal fa-flag" style="margin: 0 10px"></i>Flagged</label>
+            <label id="settings" class="sidebar-obj"><i class="fal fa-cog" style="margin: 0 10px"></i>Settings</label>
+            <div id="settings-window">
+                <label class="settings-obj" id="sign-out"><i class="fal fa-sign-out" style="margin-right: 15px"></i>Sign Out</label>
+                <label class="settings-obj" id="account"><i class="fal fa-user-cog" style="margin-right: 15px"></i>Account</label>
+            </div>
+        </div>
+        <div id="middle-bar">
+            <div id="r">
+
+            </div>
+        </div>
+        <div id="right-bar">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="http://localhost:2000/account/script.js"></script>

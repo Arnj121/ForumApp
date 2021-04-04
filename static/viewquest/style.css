@@ -1,0 +1,241 @@
+body{
+    font-family: 'Open Sans',sans-serif;
+}
+#root{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#container-lvl1{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    border-color: #ECEFF1;
+    border-style: solid;
+    border-width: 0 0 thin 0;
+}
+#icon{
+    width: 15%;
+}
+.icon{
+    border: thin solid #eeeeed;
+    color: #CFD8DC;
+    margin: auto;
+    border-radius: 100px;
+    padding: 6px 8px;
+}
+.name{
+    color: #B0BEC5;
+    margin: 5px 0;
+}
+#search-window{
+    width: 65%;
+    min-width: 400px;
+    height: 50%;
+    margin:auto 0;
+    text-align: center;
+}
+#options{
+    width: 20%;
+}
+#search-input{
+    width: 80%;
+    height: 100%;
+    font-size: large;
+    outline: none;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    background-color: #eeeeed;
+    font-family: "Open Sans", sans-serif;
+    border: 0 solid;
+    border-radius: 5px;
+    color: #263238;
+}
+#options{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.option{
+    color: #263238;
+    margin: auto 20px;
+}
+.option:hover{
+    cursor: pointer;
+}
+#username{
+    font-family: "Open Sans", sans-serif;
+    margin-left: 15px;
+    font-size: large;
+    color: #212121;
+}
+#container-lvl2{
+    display: flex;
+    flex-direction: row;
+}
+#side-bar,#right-bar{
+    padding-top: 20px;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+}
+#side-bar{
+    width: 15%;
+    min-width: 200px;
+}
+#right-bar{
+    width: 20%;
+}
+
+.sidebar-obj{
+    padding: 7px 10px;
+    margin: 0 5px;
+    border-radius: 0 100px 100px 0;
+    color: #37474F;
+}
+.sidebar-obj:hover{
+    cursor: pointer;
+}
+#middle-bar{
+    width: 65%;
+    height: 99%;
+    margin-top: 5px;
+    border-style: solid;
+    border-color: #ECEFF1;
+    border-width: 0 thin;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+}
+
+#settings-window{
+    display: none;
+    flex-direction: column;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+}
+.settings-obj{
+    padding: 10px 5px 10px 60px;
+    color: #37474F;
+}
+@keyframes show-settings {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes hide-settings {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+#sign-out:hover,#account:hover{
+    cursor: pointer;
+}
+#main{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+#user-profile,.user-profile{
+    display: flex;
+    width: 10%;
+    flex-direction: column;
+    text-align: center;
+    border-style: solid;
+    border-color: #ECEFF1;
+    border-width: 0 thin 0 0;
+    min-width: 70px;
+}
+#question{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(-45deg, #ebfefe,#fff);
+    width: 90%;
+}
+#title{
+    color: #448AFF;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: xx-large;
+}
+#body{
+    color: #37474F;
+    padding: 5px 30px;
+    border-color: #d1d1d0;
+    word-break: break-word;
+}
+
+#date,.date{
+    color: #898988;
+    font-size: small;
+    padding: 5px;
+    text-align: right;
+    margin-top: 5px;
+}
+.vote{
+    margin: auto 10px;
+    color: #37474F;
+}
+.vote:hover{
+    cursor: pointer;
+}
+.answer{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.actual-answer {
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+    width: 100%;
+    background: linear-gradient(-45deg, #f1f9fe,#fff);
+}
+#no-answer{
+    text-align: center;
+    margin: 20px 0;
+}
+
+#answers{
+    padding: 5px;
+    min-height: 200px;
+    margin: 20px 0;
+}
+#answer-window{
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#answer-input{
+    border: thin solid #d1d1d0;
+    margin: 10px 0;
+    padding: 5px;
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+    height: 100px;
+}
+#submit{
+    background-color: #37474F;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 5px;
+}
+#submit:hover{
+    cursor: pointer;
+}
+#tools{
+    display: flex;
+    flex-direction: row;
+}

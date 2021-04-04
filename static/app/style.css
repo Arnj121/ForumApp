@@ -1,0 +1,249 @@
+body{
+    font-family: 'Open Sans',sans-serif;
+}
+#root{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#container-lvl1{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    border-color: #ECEFF1;
+    border-style: solid;
+    z-index: 2;
+    border-width: 0 0 thin 0;
+}
+#icon{
+    width: 15%;
+}
+#search-window{
+    width: 65%;
+    min-width: 400px;
+    height: 50%;
+    margin:auto 0;
+    text-align: center;
+}
+
+#options{
+    width: 20%;
+}
+#search-input{
+    width: 80%;
+    height: 100%;
+    font-size: large;
+    outline: none;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    background-color: #eeeeed;
+    font-family: "Open Sans", sans-serif;
+    border: 0 solid;
+    border-radius: 5px;
+    color: #263238;
+}
+#search-results{
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #eeeeed;
+    border-radius: 0 0 5px 5px;
+    width: 80%;
+    margin: 0 auto;
+}
+.search-results-obj{
+    padding: 5px;
+    text-align: left;
+}.search-results-obj:hover{
+     cursor: pointer;
+ }
+#options{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.option{
+    margin: auto 20px;
+}
+.option:hover{
+    cursor: pointer;
+}
+#username{
+    font-family: "Open Sans", sans-serif;
+    margin-left: 15px;
+    font-size: large;
+    color: #212121;
+}
+#container-lvl2{
+    display: flex;
+    flex-direction: row;
+}
+#side-bar,#right-bar{
+    padding-top: 20px;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+}
+#side-bar{
+    width: 15%;
+    min-width: 200px;
+}
+#right-bar{
+    width: 20%;
+}
+
+.sidebar-obj{
+    padding: 7px 10px;
+    margin: 0 5px;
+    color: #37474F;
+    border-radius: 0 100px 100px 0;
+}
+.sidebar-obj:hover{
+    cursor: pointer;
+}
+#middle-bar{
+    width: 65%;
+    height: 99%;
+    margin-top: 5px;
+    border-style: solid;
+    border-color: #ECEFF1;
+    border-width: 0 thin;
+    display: flex;
+    flex-direction: column;
+
+}
+#ask-question{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px auto;
+    border-style: solid;
+    border-color: #ECEFF1;
+    border-width: 0 0 thin 0;
+    padding: 10px 0 20px 0;
+}
+#question-input-title {
+    height: 30px;
+    border: 0;
+    width: 100%;
+    background-color: #263238;
+    border-radius: 5px;
+    font-family: "Open Sans",sans-serif;
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
+    outline: none;
+    color: #f08282;
+    margin-bottom: 5px;
+
+}
+#question-input-body{
+    height: 60px;
+    border: 0 ;
+    width: 100%;
+    background-color: #263238;
+    border-radius: 5px;
+    outline: none;
+    color: #f08282;
+    font-family: 'Open Sans',sans-serif;
+    padding: 10px;
+}
+#question-input-body::-webkit-scrollbar{
+    width: 0;
+}
+#post-question{
+    background-color: #37474F;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto 0;
+}
+#post-parent:hover{
+    cursor: pointer;
+}
+#notification{
+    margin-left: 10px;
+    color: #448AFF;
+}
+#tags{
+    display: flex;
+    flex-direction: column;
+}
+.tags-obj{
+    color: #448AFF;
+    background-color: #f9f9f8;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 4px;
+}
+.remove-tag{
+    margin: 0 10px;
+    z-index: 2;
+}
+.remove-tag:hover{
+    cursor: pointer;
+}
+#tags-entered{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0;
+}
+#tag-input{
+    width: 200px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #448AFF;
+    height: 30px;
+    outline: none;
+    color: whitesmoke;
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
+}
+#add-tag{
+    background-color: #448AFF;
+    transform: scale(1.3);
+    color: whitesmoke;
+    padding: 4px 6px;
+    margin: 0 10px;
+    border-radius: 50px;
+}
+#add-tag:hover{
+    cursor: pointer;
+
+}
+#tag-input::placeholder{
+    color: white;
+}
+#settings-window{
+    display: none;
+    flex-direction: column;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+}
+.settings-obj{
+    padding: 10px 5px 10px 60px;
+    color: #37474F;
+    border-radius: 0 100px 100px 0;
+}
+@keyframes show-settings {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes hide-settings {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+#sign-out:hover,#account:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,250 @@
+body{
+    font-family: 'Open Sans',sans-serif;
+}
+#root{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#container-lvl1{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    border-color: #ECEFF1;
+    border-style: solid;
+    border-width: 0 0 thin 0;
+    z-index: 2;
+}
+#icon{
+    width: 15%;
+}
+#search-window{
+    width: 65%;
+    min-width: 400px;
+    height: 50%;
+    margin:auto 0;
+    text-align: center;
+}
+#options{
+    width: 20%;
+}
+#search-input{
+    width: 80%;
+    height: 100%;
+    font-size: large;
+    outline: none;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    background-color: #eeeeed;
+    font-family: "Open Sans", sans-serif;
+    border: 0 solid;
+    border-radius: 5px;
+    color: #263238;
+}
+#search-results{
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #eeeeed;
+    border-radius: 0 0 5px 5px;
+    width: 80%;
+    margin: 0 auto;
+}
+.search-results-obj{
+    padding: 5px;
+    text-align: left;
+}.search-results-obj:hover{
+     cursor: pointer;
+ }
+#options{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.option{
+    color: #263238;
+    margin: auto 20px;
+}
+.option:hover{
+    cursor: pointer;
+}
+#username{
+    font-family: "Open Sans", sans-serif;
+    margin-left: 15px;
+    font-size: large;
+    color: #212121;
+}
+#container-lvl2{
+    display: flex;
+    flex-direction: row;
+}
+#side-bar,#right-bar{
+    padding-top: 20px;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+}
+#side-bar{
+    width: 15%;
+    min-width: 200px;
+}
+#right-bar{
+    width: 20%;
+}
+
+.sidebar-obj{
+    padding: 7px 10px;
+    margin: 0 5px;
+    border-radius: 0 100px 100px 0;
+    color: #37474F;
+}
+.sidebar-obj:hover{
+    cursor: pointer;
+}
+#middle-bar{
+    width: 65%;
+    height: 99%;
+    margin-top: 5px;
+    border-style: solid;
+    border-color: #eeeeed;
+    border-width: 0 thin;
+    display: flex;
+    flex-direction: column;
+}
+
+#settings-window{
+    display: none;
+    flex-direction: column;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+}
+.settings-obj{
+    padding: 10px 5px 10px 60px;
+    border-radius: 0 100px 100px 0;
+    color: #37474F;
+}
+@keyframes show-settings {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes hide-settings {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+#sign-out:hover,#account:hover{
+    cursor: pointer;
+}
+
+#filters{
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-color: #eeeeed;
+    border-width: 0 0 thin 0;
+    color: #212121;
+}
+#asked-questions{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.asked-questions-obj{
+    margin:20px auto;
+    border:thin solid #eeeeed;
+    padding: 5px;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.q-title{
+    padding: 5px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #448AFF;
+}
+.q-title:hover{
+    cursor: pointer;
+}
+.q-body{
+    padding: 5px 5px 5px 30px;
+    color: #37474F;
+}
+.q-body:hover{
+    cursor: default;
+}
+.votemain{
+    display: flex;
+    flex-direction: row;
+    color: #263238;
+    margin: 10px 0 0 10px;
+}
+.votes{
+    margin: auto 10px;
+}
+.date{
+    margin-left: 20px;
+    font-size: small;
+}
+.fs{
+    margin: auto 15px;
+}
+.fs:hover{
+    cursor: pointer;
+}
+#filters,#sorting{
+    margin: 5px;
+}
+.vote{
+    margin-right: 5px;
+}
+.filter-obj{
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.filter-obj:hover{
+    cursor: pointer;
+}
+#date-from,#date-to{
+    border: 0;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-family: "Open Sans", sans-serif;
+    outline: none;
+}
+
+#d1,#d2{
+    display: none;
+    color: #FF6E40;
+    background-color: #ECEFF1;
+}
+#sorting{
+    display: flex;
+    flex-direction: row;
+    border-width: 0 0 thin 0;
+    border-style: solid;
+    border-color: #eeeeed;
+    color: #212121;
+}
+
+.sorting-obj{
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.sorting-obj:hover{
+    cursor: pointer;
+}

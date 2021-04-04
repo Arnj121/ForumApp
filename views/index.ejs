@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum - My Questions</title>
+    <link href="http://localhost:2000/viewquest/style.css" rel="stylesheet" type="text/css"/>
+    <link href="http://localhost:2045/fontawesome.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="root">
+    <div id="container-lvl1">
+        <div id="icon">
+        </div>
+        <div id="search-window">
+            <input type="text" id="search-input" placeholder="Search">
+        </div>
+        <div id="options">
+            <i class="fas fa-user option" style="border: thin solid #d1d1d0;padding: 5px 10px;border-radius: 5px"><label id="username"></label></i>
+        </div>
+    </div>
+    <div id="container-lvl2">
+        <div id="side-bar">
+            <label id="home" class="sidebar-obj"><i class="fal fa-home-alt" style="margin: 0 15px 0 10px"></i>Home</label>
+            <label id="questions" class="sidebar-obj"><i class="fal fa-question-square" style="margin: 0 15px 0 10px"></i>My Questions</label>
+            <label id="answered" class="sidebar-obj"><i class="fal fa-comment-check" style="margin: 0 10px"></i>Answered</label>
+            <label id="starred" class="sidebar-obj"><i class="fal fa-star"  style="margin: 0 10px"></i>Starred</label>
+            <label id="flagged" class="sidebar-obj"><i class="fal fa-flag" style="margin: 0 10px"></i>Flagged</label>
+            <label id="settings" class="sidebar-obj"><i class="fal fa-cog" style="margin: 0 10px"></i>Settings</label>
+            <div id="settings-window">
+                <label class="settings-obj" id="sign-out"><i class="fal fa-sign-out" style="transform: scale(1.5);margin-right: 15px"></i>Sign Out</label>
+                <label class="settings-obj" id="account"><i class="fal fa-user-cog" style="transform: scale(1.5);margin-right: 15px"></i>Account</label>
+            </div>
+        </div>
+        <div id="middle-bar">
+            <div id="main">
+                <div id="user-profile">
+                    <i class="fas fa-user fa-3x" style="border: thin solid #eeeeed;color: #CFD8DC;margin: auto;border-radius: 100px;padding: 6px 8px;"></i>
+                    <label class="name"><%=q.name%></label>
+                </div>
+                <div id="question">
+                    <label style="display:none;" id="post-id"><%=q._id%></label>
+                    <label style="display: none" id="owner"><%=q.asked%></label>
+                    <label id="title"><%=q.title%></label>
+                    <label id="body"><%=q.body%></label>
+                    <label id="date">Asked <%=q.time.toDateString().substring(4,)%></label>
+                    <div style="display:flex;flex-direction: row;padding: 0 0 5px 0;margin-left: 15px">
+                        <label class="vote"><i class="fal fa-caret-up" id="<%=q._id%>up" onclick="upvote()" style="margin-right: 5px"></i><label id="uc"><%=q.upvotes%></label></label>
+                        <label class="vote"><i class="fal fa-caret-down" id="<%=q._id%>down" onclick="downvote()" style="margin-right: 5px"></i><label id="dc"><%=q.downvotes%></label></label>
+                        <label class="vote"><i class="fal fa-star"  onclick="starred()" id="<%=q._id%>star"></i></label>
+                        <label class="vote"><i class="fal fa-flag" onclick="flag()" id="<%=q._id%>flag"></i></label>
+                    </div>
+                </div>
+            </div>
+            <label style="font-size: large;margin: 20px;color: #898988;"><%=q.answer%> Answers</label>
+            <div id="answers">
+                <% try{%>
+                    <% if(answers.length){%>
+                        <%for(let i=0;i<answers.length;i++){%>
+                            <div class="answer">
+                                <div class="user-profile">
+                                    <i class="fas fa-user fa-3x icon" style=""></i>
+                                    <label style="color: #B0BEC5;margin: 5px 0"><%=answers[i].name%></label>
+                                </div>
+                                <div class="actual-answer">
+                                    <label style="display: none" id="<%=answers[i]._id%>o"><%=answers[i].answeredby%></label>
+                                    <p style="margin: 5px 10px" id="<%=answers[i]._id%>a"><%=answers[i].answer%></p>
+                                    <label class="date">Answered <%=answers[i].time.toDateString().substring(3,)%></label>
+                                    <div style="display:flex;margin-left:15px;flex-direction: row;padding: 0 0 5px 0">
+                                        <label class="vote"><i class="fal fa-caret-up" style="margin-right: 5px" id="<%=answers[i]._id%>u" onclick="upvotea(event)"></i><label id="<%=answers[i]._id%>uv"><%=answers[i].upvotes%></label></label>
+                                        <label class="vote"><i class="fal fa-caret-down" style="margin-right: 5px" id="<%=answers[i]._id%>d" onclick="downvotea(event)"></i><label id="<%=answers[i]._id%>dv"><%=answers[i].downvotes%></label></label>
+                                        <label class="vote"><i class="fal fa-edit" style="margin-right: 5px" id="<%=answers[i]._id%>e" onclick="edit(event)"></i></label>
+                                    </div>
+                                </div>
+                            </div>
+                        <%}%>
+                    <%} else{%>
+                        <div id="no-answer">
+                            <label style="font-size: large"><i class="fal fa-frown" style="margin-right: 10px"></i>No answers</label>
+                        </div>
+                    <%}%>
+                <%} catch (e) {%>
+                        <div id="no-answer">
+                            <label style="font-size: large"><i class="fal fa-frown" style="margin-right: 10px"></i>No answers</label>
+                        </div>
+                <%}%>
+            </div>
+            <div id="answer-window">
+                <label style="font-size: large;color: #898988">Type Your Answer here</label>
+                <textarea id="answer-input"></textarea>
+                <div id="tools">
+                    <label id="submit"><i class="fal fa-paper-plane" style="margin-right: 10px"></i>Submit</label>
+                    <label style="margin: auto 10px;color: #37474F;display: none" id="notify">Your Answer has been submitted</label>
+                </div>
+            </div>
+        </div>
+        <div id="right-bar">
+
+        </div>
+    </div>
+    <div id="pop-up">
+        <label id="msg"></label>
+    </div>
+</div>
+</body>
+</html>
+<script src="http://localhost:2000/viewquest/script.js"></script>

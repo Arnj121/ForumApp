@@ -1,0 +1,56 @@
+const express = require('express')
+const app = express()
+const bodyparser = require('body-parser')
+const path = require('path')
+const processor = require('./processor')
+const login = require('./login')
+app.use(express.static(path.join(__dirname,'static')))
+app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyparser.json())
+app.set('view engine','ejs')
+app.get('/login',(req,res)=>{
+    res.sendFile(path.join(__dirname,'static','login','index.html'))
+})
+app.get('/home',(req,res)=>{
+    res.sendFile(path.join(__dirname,'static','app','index.html'))
+})
+app.get('/myquestions',(req,res)=>{
+    res.sendFile(path.join(__dirname,'static','myquest','index.html'))
+})
+app.get('/answered',(req,res)=>{
+    res.sendFile(path.join(__dirname,'static','answer','index.html'))
+})
+app.get('/starred',(req,res)=>{
+    res.sendFile(path.join(__dirname,'static','starred','index.html'))
+})
+app.get('/flagged',(req,res)=>{
+    res.sendFile(path.join(__dirname,'static','flagged','index.html'))
+})
+app.get('/account',(req,res)=>{
+    res.sendFile(path.join(__dirname,'static','account','index.html'))
+})
+app.get('/questions/:qid',processor.viewQuestion)
+
+
+app.post('/login',login.login)
+app.post('/signup',login.signup)
+app.post('/postquestion',processor.postquestion)
+app.get('/getmyquestions',processor.getMyQuestions)
+app.post('/submitanswer',processor.submitanswer)
+app.get('/getanswered',processor.getanswered)
+app.post('/upvote',processor.upvote)
+app.post('/downvote',processor.downvote)
+app.post('/starred',processor.starred)
+app.post('/flag',processor.flag)
+app.get('/idToQuest',processor.idtoquest)
+app.post('/upvotea',processor.upvotea)
+app.post('/downvotea',processor.downvotea)
+app.get('/search',processor.search)
+app.get('/getstarred',processor.getStarred)
+app.post('/destar',processor.destar)
+app.get('/getflagged',processor.getFlagged)
+app.post('/deflag',processor.deflag)
+app.post('/editanswer',processor.editanswer)
+app.listen(2000,()=>{
+    console.log('we are live')
+})
